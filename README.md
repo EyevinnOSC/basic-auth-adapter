@@ -18,9 +18,14 @@ Assuming that the GitHub token secret is stored as `ghtoken`, OSC access token a
 
 ```bash
 % osc create eyevinn-web-runner myadapter \
-  -o GitHubUrl=https://github.com/EyevinnOSC/basic-auth-adapter
+  -o GitHubUrl=https://github.com/EyevinnOSC/basic-auth-adapter \
   -o GitHubToken="{{secrets.ghtoken}}" \
   -o OscAccessToken="{{secrets.osctoken}}" \
   -o ConfigService=authadaptconfig
 ```
 
+As an example we have a basic auth adapter for an [HLS Stream Monitor](https://app.osaas.io/dashboard/service/eyevinn-hls-monitor) instance named `test`.
+
+```bash
+% curl -u myuser:changeme https://eyevinnlab-myadapter.eyevinn-web-runner.auto.prod.osaas.io/test/metrics
+```
