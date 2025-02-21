@@ -51,10 +51,12 @@ async function main() {
         });
         if (res.headers.get('content-type') === 'application/json') {
           const data = await res.json();
-          reply.code(res.status).send(data);
+          const headers = Object.fromEntries(res.headers.entries());
+          reply.headers(headers).code(res.status).send(data);
         } else {
           const data = await res.text();
-          reply.code(res.status).send(data);
+          const headers = Object.fromEntries(res.headers.entries());
+          reply.headers(headers).code(res.status).send(data);
         }
       } catch (err) {
         reply.code(500).send(err);
