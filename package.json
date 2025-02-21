@@ -1,0 +1,23 @@
+{
+  "name": "basic-auth-adapter",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eyevinn Technology AB <osc@eyevinn.se>",
+  "license": "MIT",
+  "description": "Deploy as a Web Runner and provide Basic auth to access a service instance",
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@fastify/basic-auth": "^6.0.3",
+    "@osaas/client-core": "^0.15.1",
+    "fastify": "^5.2.1",
+    "nano": "^10.1.4",
+    "ts-node": "^10.9.2"
+  }
+}
